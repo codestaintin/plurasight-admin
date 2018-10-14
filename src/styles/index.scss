@@ -1,3 +1,18 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+.app {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, san-serif;
+  color: #4d4d4d;
+  min-width: 550px;
+  max-width: 850px;
+  margin: 10px auto 0;
+}
 
+a:active {
+  color: orange;
+}
+
+.custom_nav {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -31,7 +31,7 @@
         "no-use-before-define": 0,
         "no-lonely-if": 0,
         "import/extensions": 0,
-        "indent": ["error","tab"],
+        "indent": ["error", 2],
         "linebreak-style": ["error","unix"],
         "quotes": ["error","single"],
         "semi": ["error","always"],
@@ -67,8 +67,8 @@
         "react/destructuring-assignment": 0,
         "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
         "valid-jsdoc": ["error", {
-          "requireReturn": true,
-          "requireReturnType": true,
+          "requireReturn": false,
+          "requireReturnType": false,
           "requireParamDescription": false,
           "requireReturnDescription": false
         }],
