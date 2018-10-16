@@ -1,17 +1,27 @@
 import React from 'react';
+import { shape, arrayOf } from 'prop-types';
+import { connect } from 'react-redux';
+import CourseList from './CourseList';
+
 /**
  *
  * @function CoursePage
  *
  * @returns {JSX}
  */
-const CoursePage = () => (
-  <div className="app jumbotron">
+const CoursePage = ({ courses }) => (
+  <div className="app">
     <h1>Courses</h1>
-    <p>
-      This is the courses page
-    </p>
+    <CourseList courses={courses} />
   </div>
 );
 
-export default CoursePage;
+const mapStateToProps = ({ courses }) => ({
+  courses
+});
+
+CoursePage.propTypes = {
+  courses: arrayOf(shape({}))
+};
+
+export default connect(mapStateToProps)(CoursePage);

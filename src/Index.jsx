@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import store from './store';
+import loadCourses from './actions/course/courseActions';
 import HomePage from './components/Home/HomePage';
 import AboutPage from './components/About/AboutPage';
 import Course from './components/Courses/CoursesPage';
 import Header from './components/commons/Header';
 import './styles/index.scss';
 
+store.dispatch(loadCourses());
 /**
  *
  * @function App
@@ -23,4 +27,5 @@ const App = () => (
     </Fragment>
   </BrowserRouter>
 );
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>,
+  document.getElementById('root'));
