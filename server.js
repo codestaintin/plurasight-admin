@@ -10,9 +10,9 @@ app.use(compression());
 app.use(express.static('dist'));
 
 app.use('*', (req, res) => {
-	res.sendFile(resolve(__dirname, './index.html'));
+  res.sendFile(resolve(__dirname, './index.html'));
 });
 
 app.listen(port, () => {
-	console.log('Server running on a port');
+  console.log('Server running on a port');
 });
