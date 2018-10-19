@@ -49,7 +49,7 @@ class AuthorApi {
               `First Name must be at least ${minAuthorNameLength} characters.`
             )
           )
-            .then(error => console.log(error));
+            .then(error => console.log(error)); // eslint-disable-line
         }
 
         if (author.lastName.length < minAuthorNameLength) {
