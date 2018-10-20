@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import Paginate from 'react-paginate';
 import PropTypes from 'prop-types';
 import CourseListRow from './CourseListRow';
 
@@ -17,21 +16,17 @@ const CourseList = ({ courses, isLoading, handleDelete }) => (
         </tr>
       </thead>
       <tbody>
-        {courses.map(course => <CourseListRow key={course.id} course={course} handleDelete={handleDelete} />
-        )}
+        {
+          courses.map(course => (
+            <CourseListRow
+              key={course.id}
+              course={course}
+              handleDelete={handleDelete}
+            />
+          )
+          )}
       </tbody>
     </table>
-    <Paginate
-      pageCount={2}
-      pageRangeDisplayed={2}
-      marginPagesDisplayed={2}
-      containerClassName="pagination justify-content-center"
-      subContainerClassName="page-item"
-      pageLinkClassName="page-link"
-      activeClassName="page-item active"
-      nextLinkClassName="page-link"
-      previousLinkClassName="page-link"
-    />
   </Fragment>
 
 );

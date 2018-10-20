@@ -7,5 +7,6 @@ export default keymirror({
   UPDATE_COURSE_SUCCESS: null,
   LOAD_SUCCESS: null,
   SAVING_COURSE: null,
-  DELETE_COURSE_SUCCESS: null
+  DELETE_COURSE_SUCCESS: null,
+  PAGE_CHANGE: null
 });
