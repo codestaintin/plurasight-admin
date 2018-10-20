@@ -1,9 +1,11 @@
+import _ from 'lodash';
 import actionTypes from '../actions/actionTypes';
 
 const initialState = {
   courses: [],
   isLoading: false,
-  isSaving: false
+  isSaving: false,
+  currentPage: 1,
 };
 
 const courseReducer = (state = initialState, action) => {
@@ -11,13 +13,13 @@ const courseReducer = (state = initialState, action) => {
   case actionTypes.LOAD_COURSES_SUCCESS:
     return {
       ...state,
-      courses: action.courses
+      courses: _.sortBy(action.courses, 'title')
     };
 
   case actionTypes.CREATE_COURSE_SUCCESS:
     return {
       ...state,
-      courses: [...state.courses, action.course]
+      courses: _.sortBy([...state.courses, action.course], 'title')
     };
 
   case actionTypes.UPDATE_COURSE_SUCCESS:
@@ -43,6 +45,8 @@ const courseReducer = (state = initialState, action) => {
       ...state,
       courses: [...state.courses.filter(course => course.id !== action.id)]
     };
+  case actionTypes.PAGE_CHANGE:
+    return { ...state, currentPage: action.pageNumber };
   default:
     return state;
   }

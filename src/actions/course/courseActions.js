@@ -71,3 +71,8 @@ export const deleteCourse = (id) => (dispatch) => {
   toastr.success('Deletion successful');
   toastr.clear();
 };
+
+export const pageChange = pageNumber => dispatch => dispatch({
+  type: actionTypes.PAGE_CHANGE,
+  pageNumber
+});
