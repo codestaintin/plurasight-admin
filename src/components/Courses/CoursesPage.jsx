@@ -72,7 +72,11 @@ class CoursePage extends React.Component {
   }
 }
 
-const mapStateToProps = ({ allCourses: { courses, isLoading, currentPage } }) => {
+const mapStateToProps = ({
+  allCourses:
+  { courses, isLoading, currentPage } 
+}
+) => {
   const meta = paginator(courses, currentPage);
   return {
     courses: meta.result,

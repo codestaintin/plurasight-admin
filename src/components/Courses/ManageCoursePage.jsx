@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Prompt } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as courseActions from '../../actions/course/courseActions';
+import courseValidator from '../../utils/courseValidation';
 import CourseForm from './CourseForm';
 
 /**
@@ -19,6 +21,7 @@ class ManageCoursePage extends React.Component {
       authorId: '',
       category: '',
       watchHref: '',
+      isBlocking: false
     },
     errors: {}
   });
@@ -28,6 +31,7 @@ class ManageCoursePage extends React.Component {
     this.state = ManageCoursePage.initialState();
     this.updateCourse = this.updateCourse.bind(this);
     this.saveCourse = this.saveCourse.bind(this);
+    this.validateForm = this.validateForm.bind(this);
   }
 
   static getDerivedStateFromProps({ course }) {
@@ -45,9 +49,27 @@ class ManageCoursePage extends React.Component {
    * @param { object }  event
    */
   updateCourse(event) {
-    const { course } = this.state;
-    course[event.target.name] = event.target.value;
-    this.setState({ course });
+    const { name, value } = event.target;
+    const { course, errors } = this.state;
+    delete errors[name];
+    course[name] = value;
+    this.setState({ course, isBlocking: true, errors: { ...errors } });
+  }
+
+  /**
+   * Validate form
+   *
+   * @returns { object }
+   */
+  validateForm() {
+    const {
+      errors,
+      isValid
+    } = courseValidator(this.state.course);
+    if (!isValid) {
+      this.setState({ errors });
+    }
+    return isValid;
   }
 
   /**
@@ -56,8 +78,13 @@ class ManageCoursePage extends React.Component {
    */
   saveCourse(event) {
     event.preventDefault();
-    this.props.actions.saveCourse(this.state.course)
-      .then(() => this.redirect());
+    if (this.validateForm()) {
+      this.props.actions.saveCourse(this.state.course)
+        .then(() => {
+          this.setState({ isBlocking: false });
+          this.redirect();
+        });
+    }
   }
 
   redirect() {
@@ -67,6 +94,12 @@ class ManageCoursePage extends React.Component {
   render() {
     return (
       <div className="container">
+        <Prompt
+          when={this.state.isBlocking}
+          message={
+            location => `Are you sure you want to go to ${location.pathname}`
+          }
+        />
         <CourseForm
           course={this.state.course}
           onChange={this.updateCourse}
