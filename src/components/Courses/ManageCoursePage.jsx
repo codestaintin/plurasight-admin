@@ -34,14 +34,24 @@ class ManageCoursePage extends React.Component {
     this.validateForm = this.validateForm.bind(this);
   }
 
-  static getDerivedStateFromProps({ course }) {
-    if (course && course.id) {
-      return {
-        ...ManageCoursePage.initialState(),
-        course
-      };
-    }
-    return null;
+  componentDidMount() {
+    this.setState({
+      course: this.props.course || {
+        title: '',
+        length: '',
+        authorId: '',
+        category: '',
+        watchHref: '',
+        isBlocking: false
+      }
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      ...ManageCoursePage.initialState(),
+      course: nextProps.course
+    });
   }
 
   /**
@@ -51,9 +61,8 @@ class ManageCoursePage extends React.Component {
   updateCourse(event) {
     const { name, value } = event.target;
     const { course, errors } = this.state;
-    delete errors[name];
-    course[name] = value;
-    this.setState({ course, isBlocking: true, errors: { ...errors } });
+    const temp = Object.assign({}, course, { [name]: value });
+    this.setState({ course: temp, isBlocking: true, errors: { ...errors } });
   }
 
   /**
