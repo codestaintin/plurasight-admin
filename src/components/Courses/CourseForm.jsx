@@ -11,6 +11,7 @@ const CourseForm = ({
     <TextInput
       name="title"
       label="Title"
+      placeholder="Course title"
       value={course.title}
       onChange={onChange}
       error={errors.title}
@@ -29,6 +30,7 @@ const CourseForm = ({
     <TextInput
       name="category"
       label="Category"
+      placeholder="Course category"
       value={course.category}
       onChange={onChange}
       error={errors.category}
@@ -37,6 +39,8 @@ const CourseForm = ({
     <TextInput
       name="length"
       label="Length"
+      placeholder="Course Length e.g 1:10"
+      pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"
       value={course.length}
       onChange={onChange}
       error={errors.length}

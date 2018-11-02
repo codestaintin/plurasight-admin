@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paginator> renders the <Paginator> component 1`] = `
+<PaginationBoxView
+  activeClassName="page-item active"
+  breakLabel="..."
+  containerClassName="pagination justify-content-center"
+  disableInitialCallback={true}
+  disabledClassName="disabled"
+  initialPage={0}
+  marginPagesDisplayed={2}
+  nextClassName="next"
+  nextLabel="Next"
+  nextLinkClassName="page-link"
+  onPageChange={[MockFunction]}
+  pageCount={2}
+  pageLinkClassName="page-link"
+  pageRangeDisplayed={2}
+  previousClassName="previous"
+  previousLabel="Previous"
+  previousLinkClassName="page-link"
+  subContainerClassName="page-item"
+/>
+`;

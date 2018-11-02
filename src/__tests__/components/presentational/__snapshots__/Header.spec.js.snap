@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header> renders the <Header> component 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-dark bg-dark custom_nav"
+>
+  <ul
+    className="navbar-nav"
+  >
+    <li
+      className="nav-item dropdown"
+    >
+      <Link
+        className="nav-link"
+        replace={false}
+        to="/"
+      >
+        Home
+      </Link>
+    </li>
+    <li
+      className="nav-item"
+    >
+      <Link
+        className="nav-link"
+        replace={false}
+        to="/about"
+      >
+        About
+      </Link>
+    </li>
+    <li
+      className="nav-item"
+    >
+      <Link
+        className="nav-link"
+        replace={false}
+        to="/courses"
+      >
+        Courses 
+        <span
+          className="badge badge-light"
+        >
+          1
+        </span>
+      </Link>
+    </li>
+  </ul>
+</nav>
+`;

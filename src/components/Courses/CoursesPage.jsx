@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
+import _ from 'lodash';
 import {
   shape, arrayOf, bool, func
 } from 'prop-types';
@@ -16,7 +17,7 @@ import CourseList from './CourseList';
  *
  * @returns {JSX}
  */
-class CoursePage extends React.Component {
+export class CoursePage extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
@@ -74,12 +75,12 @@ class CoursePage extends React.Component {
 
 const mapStateToProps = ({
   allCourses:
-  { courses, isLoading, currentPage } 
+  { courses, isLoading, currentPage }
 }
 ) => {
   const meta = paginator(courses, currentPage);
   return {
-    courses: meta.result,
+    courses: _.sortBy(meta.result, 'title'),
     loading: isLoading,
     meta,
     currentPage

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage> renders the <HomePage> component 1`] = `
+<Fragment>
+  <div
+    className="app jumbotron"
+  >
+    <h1>
+      Plurasight Administration
+    </h1>
+    <p>
+      React, Redux and React Router in ES6 for ultra-responsive web apps
+    </p>
+    <Link
+      className="btn btn-primary btn-lg"
+      replace={false}
+      to="/about"
+    >
+      Learn More
+    </Link>
+  </div>
+</Fragment>
+`;

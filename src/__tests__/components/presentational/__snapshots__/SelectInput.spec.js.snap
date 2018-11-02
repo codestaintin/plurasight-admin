@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectInput> renders the <SelectInput> component 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor=""
+  />
+  <div
+    className="field"
+  >
+    <select
+      className="form-control"
+      name=""
+      onChange={[MockFunction]}
+      value=""
+    >
+      <option
+        value=""
+      />
+    </select>
+  </div>
+</div>
+`;

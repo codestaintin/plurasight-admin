@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseListRow> renders the <CourseListRow> component 1`] = `
+<tr>
+  <td>
+    <a
+      rel="noreferrer noopener"
+      target="_blank"
+    >
+      Watch
+    </a>
+  </td>
+  <td>
+    <Link
+      replace={false}
+      to="/course/1"
+    />
+  </td>
+  <td />
+  <td />
+  <td />
+  <td>
+    <button
+      className="btn btn-danger"
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+  </td>
+</tr>
+`;

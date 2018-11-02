@@ -13,13 +13,13 @@ const courseReducer = (state = initialState, action) => {
   case actionTypes.LOAD_COURSES_SUCCESS:
     return {
       ...state,
-      courses: _.sortBy(action.courses, 'title')
+      courses: action.courses
     };
 
   case actionTypes.CREATE_COURSE_SUCCESS:
     return {
       ...state,
-      courses: _.sortBy([...state.courses, action.course], 'title')
+      courses: [...state.courses, action.course]
     };
 
   case actionTypes.UPDATE_COURSE_SUCCESS:
