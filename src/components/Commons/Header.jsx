@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
  *
  * @returns {JSX}
  */
-const Header = ({ courses }) => (
+export const Header = ({ courses }) => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark custom_nav">
     <ul className="navbar-nav">
       <li className="nav-item dropdown">

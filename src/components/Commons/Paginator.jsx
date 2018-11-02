@@ -20,8 +20,8 @@ const Paginator = ({ pageCount, page, handlePageClick }) => (
 );
 
 Paginator.propTypes = {
-  page: number.isRequired,
-  pageCount: number.isRequired,
+  page: number,
+  pageCount: number,
   handlePageClick: func.isRequired
 };
 export default Paginator;

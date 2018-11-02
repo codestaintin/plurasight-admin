@@ -22,6 +22,7 @@ Plurasight Admin app is an applications that does basic administration like the 
 - Navigate to the directoty
 - Install all depencies with ```yarn install```
 - Start the server by running ```yarn devServer```
+- To run tests run ```yarn test```
 - Visit ``localhost:8080`` on your browser
 
 ## Contribution

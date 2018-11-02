@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseList> renders the <CourseList> component 1`] = `
+<Fragment>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+           
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Author
+        </th>
+        <th>
+          Category
+        </th>
+        <th>
+          Length
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</Fragment>
+`;

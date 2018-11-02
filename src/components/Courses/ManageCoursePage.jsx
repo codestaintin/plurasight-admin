@@ -10,7 +10,7 @@ import CourseForm from './CourseForm';
 /**
  * ManageCoursePage component
  */
-class ManageCoursePage extends React.Component {
+export class ManageCoursePage extends React.Component {
   /**
    * @returns {object} object
    */
@@ -159,5 +159,4 @@ const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(courseActions, dispatch)
 });
 
-export default
-connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);
